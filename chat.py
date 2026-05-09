@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017")
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
 client = MongoClient(MONGO_URI)
 db = client["learnsoft_chatbot"]
 leads_col = db["leads"]

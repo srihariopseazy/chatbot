@@ -259,10 +259,10 @@ async function submitLocation(city, state, country) {
   await delay(600);
   removeTyping();
   try {
-    await fetch('/save_lead', {
+    await fetch('http://192.168.1.10:8080/api/add-enquiries', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: userName, phone: userPhone, email: userEmail, course: selectedCourse, city: userCity, state: userState, country: userCountry })
+      body: JSON.stringify({ name: userName, mobileNumber: userPhone, email: userEmail, course: selectedCourse, city: userCity, state: userState, country: userCountry })
     });
   } catch (e) {}
   currentStep = "done";
